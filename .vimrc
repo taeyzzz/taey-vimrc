@@ -43,6 +43,9 @@ set tabstop=2
 " Turn on filetype plugin
 filetype plugin indent on
 filetype plugin on
+
+let mapleader = "z"
+
 " Change highlight color when goes to next search result
 nnoremap <silent> n n:call HLNext(0.2)<cr>
 nnoremap <silent> N N:call HLNext(0.2)<cr>
@@ -67,7 +70,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'Yggdroot/indentline'
 " Searching
 Plug 'eugen0329/vim-esearch'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -98,7 +101,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Language
@@ -130,3 +133,4 @@ nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 nnoremap <c-h> <c-w><c-h>
 nnoremap <c-l> <c-w><c-l>
+noremap <leader>/ :Commentary<CR>
